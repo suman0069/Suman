@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jai Shree Ram</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff7f50, #ffcc00, #ffa500);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    h1, h2 {
+      margin: 0;
+      color: white;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.9rem;
+      color: white;
+      opacity: 0.7;
+      animation: fadeInFooter 3s ease-in-out forwards;
+    }
+
+    /* Keyframes for Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+    }
+
+    @keyframes fadeInFooter {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes slideInFromBottom {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1 id="text1">Jai Shree Ram</h1>
+    <h2 id="text2" style="display: none;">Radhe Radhe</h2>
+  </div>
+  <footer>Created by Suman</footer>
+
+  <script>
+    // Text Animation Sequence
+    const text1 = document.getElementById("text1");
+    const text2 = document.getElementById("text2");
+
+    // Display "Jai Shree Ram" first
+    setTimeout(() => {
+      text1.style.animation = "fadeOut 2s ease-in-out";
+      text1.style.opacity = 0;
+
+      // After "Jai Shree Ram" fades out, show "Radhe Radhe"
+      setTimeout(() => {
+        text1.style.display = "none";
+        text2.style.display = "block";
+        text2.style.animation = "slideInFromBottom 2s ease-out";
+      }, 2000);
+    }, 3000); // "Jai Shree Ram" stays visible for 3 seconds
+  </script>
+</body>
+</html>
